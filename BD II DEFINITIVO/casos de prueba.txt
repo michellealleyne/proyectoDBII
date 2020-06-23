@@ -1,0 +1,16 @@
+/*Usuario tete, rol cliente*/
+
+-- Puede:
+SELECT precio_total, FECHA, FK_PROMOCION, FECHA_SALIDA FROM SYSTEM.reserva WHERE fk_usuario =4;
+
+SELECT p.monto_pagado, p.fecha_pago, s.nombre, tp.nombre 
+FROM SYSTEM.pago p, SYSTEM.status s, SYSTEM.tipo_pago tp, SYSTEM.usuario u, SYSTEM.reserva r
+WHERE p.fk_reserva = r.codigo
+AND   r.fk_usuario = u.codigo
+AND   u.correo = 'ava123@hotmail.com'
+AND   p.fk_tipo_pago = tp.codigo
+AND   p.fk_status = s.codigo;
+
+-- Puede:
+
+UPDATE SYSTEM.vuelo SET costo=100 WHERE codigo =1;
